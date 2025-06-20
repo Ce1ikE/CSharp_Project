@@ -1,0 +1,28 @@
+# REQUIREMENTS =============================================================================================================
+# ...
+
+# run the command "docker-compose up" to start up  all  docker containers
+# REQUIREMENTS =============================================================================================================
+
+services:
+  db-server:
+    image: mysql:latest
+    container_name: db-server
+    environment:
+      MYSQL_ROOT_PASSWORD: root_password
+      MYSQL_DATABASE: CSharpDB
+      MYSQL_USER: CSharpStudent
+      MYSQL_PASSWORD: CSStudentPwd210206128035106!@2025
+    ports:
+      - 3306:3306
+    volumes:
+      - ./CS_database:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin
+    ports:
+      - 8083:80
+    environment:
+      PMA_HOST: db-server
+      PMA_PORT: 3306
+
