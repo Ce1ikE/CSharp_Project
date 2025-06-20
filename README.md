@@ -1,2 +1,2 @@
-# C-_Project
+# C#_Project
 repository for the course of C#
